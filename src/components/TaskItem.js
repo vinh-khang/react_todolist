@@ -5,6 +5,11 @@ class TaskItem extends Component {
     
     this.props.Delete(this.props.task.id);
   }
+
+  onEdit=()=>{
+    this.props.Edit(this.props.task.id);
+  }
+
   render() {
     return (
      
@@ -17,7 +22,7 @@ class TaskItem extends Component {
                   </span>
       </td>
       <td className="text-center">
-          <button type="button" className="btn btn-warning">
+          <button type="button" className="btn btn-warning" onClick={this.onEdit}>
               <span className="fa fa-pencil mr-5"></span>Sửa
           </button>
           &nbsp;

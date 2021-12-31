@@ -3,17 +3,15 @@ class TaskForm extends Component {
     constructor(props){
         super(props);
         this.state={
+            id:'',
             name : '',
-            status : ''
+            status : false
         }
     }
     onChange=(event)=>{
         var target = event.target;
         var name = target.name;
         var value = target.value;
-        if(name === 'status'){
-            value = target.value === 'false'? false:true
-        }
         this.setState({
             [name]: value
         })
@@ -32,7 +30,8 @@ class TaskForm extends Component {
         
         
     }
-  render() {
+
+    render() {
     return (
         <div className="panel panel-warning">
         <div className="panel-heading">
